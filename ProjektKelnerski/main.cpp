@@ -1,20 +1,15 @@
 #include <iostream>
 #include "naglowek.h"
-#include <cstdlib>
-#include <fstream>
 #include <thread>
 #include <string>
 #include <windows.h>
-#include <mmsystem.h>
 #include <conio.h>
 
 using namespace std;
 
 int main() {
 
-
-
-	//this_thread::sleep_for(1000s);
+	
 	while (true)
 	{
 		int kod{};
@@ -43,14 +38,14 @@ int main() {
 						while (true)
 						{
 							system("cls");
-							cout << "Nie masz wystarczajĄcych uprawnieä! Podaj kod administratora lub wpisz 0 by wr˘ci†:";
+							cout << "Nie masz wystarczajĄcych uprawnieä! Podaj kod administratora lub wpisz 0 by wr˘ci†:"; //zmiana kodu za zgoda admina
 							int corobisz{};
 							cin >> corobisz;
 							if (corobisz==0)
 							{
 								break;
 							}
-							else if (CzyKodPoprawny(corobisz)==7)
+							else if (CzyKodPoprawny(corobisz)==7)//czy kod jest kodem admina
 							{
 								while (true)
 								{
@@ -58,13 +53,13 @@ int main() {
 									cout << "Wprowad« nowy kod";
 									int nowykod{}, tymnowy{};
 									cin >> nowykod;
-									if (CzyKodPoprawny(nowykod) != 1)
+									if (CzyKodPoprawny(nowykod) != 1)//czy kod do kogoś nie należy
 									{
 										cout << "Przykro mi, ale musisz wybra† inny kod.";
 										this_thread::sleep_for(3s);
 										continue;
 									}
-									cout << "Potwierd« nowy kod";
+									cout << "Potwierd« nowy kod";//czy kody są identyczne
 									cin >> tymnowy;
 									if (nowykod == tymnowy)
 									{
@@ -74,7 +69,7 @@ int main() {
 									}
 									else
 									{
-										cout << "Kody si© r˘ľniĄ!  Czy chcesz spr˘bowa† ponownie? (t/n)\n";
+										cout << "Kody si© r˘ľniĄ!  Czy chcesz spr˘bowa† ponownie? (t/n)\n";//możliwość powtórzenia
 										char cokol{};
 										cin >> cokol;
 										if (CzyChceszKontynuowac(cokol))
@@ -88,7 +83,7 @@ int main() {
 							}
 							else
 							{
-								cout << "Kod niepoprawny. Mam nadziej©, ľe nie pr˘bujesz si© wama† :)";
+								cout << "Kod niepoprawny. Mam nadziej©, ľe nie pr˘bujesz si© wama† :)";//jeśli nie podamy kody admina
 								this_thread::sleep_for(3s);
 								continue;
 							}
@@ -100,12 +95,12 @@ int main() {
 						while (true)
 						{
 							system("cls");
-							stoliczkiwrestauracji();
+							stoliczkiwrestauracji();//wyswietlonko stolikow
 							cout << "Kt˘ry stolik chcesz otworzy†?";
 							int wyborstolika{};
 							cin >> wyborstolika;
 							
-							if (wyborstolika > 0 && wyborstolika < 5)
+							if (wyborstolika > 0 && wyborstolika < 5)//tylko 4 stoliki wiec sprawdzam czy istnieje
 							{
 								wyswietlstolik(wyborstolika);
 								cout << "Wcinij dowolny znak, aby przej† dalej";
@@ -138,7 +133,7 @@ int main() {
 							cout << "Do kt˘rego stolika chcesz co doda†?";
 							int numerstolika{};
 							cin >> numerstolika;
-							if (numerstolika>0&&numerstolika<5)
+							if (numerstolika>0&&numerstolika<5)//spr nr stolika
 							{
 								while (true)
 								{
@@ -157,7 +152,7 @@ int main() {
 										cout << endl << "Podaj numer dania, kt˘re chcesz doda†.";
 										int danie{};
 										cin >> danie;
-										if (danie>0&&danie<20)
+										if (danie>0&&danie<20)// spr nr dania (dlatego też ostatecznie zrezygnowałam z funkcji dodawania dań, gdyż zawsze mamy 19 dań inaczej musialabym to sprawdzać z plikiem za każdym razem przy używaniu teog 
 										{ 
 											potrawacenawino(numerstolika, danie);
 										cout << "Danie zostao pomylnie dodane.";
@@ -204,7 +199,8 @@ int main() {
 									}
 									default:
 									{
-										cout << "Przykro mi, ale wybrana przez ciebie opcja nie istnieje.";
+										cout << "Przykro mi, ale wybrana przez ciebie opcja nie istnieje.";//troche sadge ;c
+										this_thread::sleep_for(3s);
 										break;
 									}
 									}
@@ -213,7 +209,7 @@ int main() {
 							}
 							else
 							{
-								cout << "Niestety taki stolik nie istnieje. Czy chcesz spr˘bowa† ponownie? (t/n)\n";
+								cout << "Niestety taki stolik nie istnieje. Czy chcesz spr˘bowa† ponownie? (t/n)\n"; // a tu co jakby stolik nie istniał
 								char stolczor{};
 								cin >> stolczor;
 								if (CzyChceszKontynuowac(stolczor))
@@ -245,9 +241,10 @@ int main() {
 									{
 										system("cls");
 										drukowanie(nrstolika, platnosc);
-										cout << "\n\nAby kontynuowa† wcinij dowolny przycisk.";
+										cout << "\n\nAby zamknĄ† wcinij dowolny przycisk.";
 										char cokolwiek;
 										cokolwiek = _getch();
+										exit(0);
 										break;
 									}
 									else
@@ -290,7 +287,7 @@ int main() {
 			while (true)//ADMIN
 			{
 				system("cls");
-				cout << "Jeli chcesz wyj† z programu, wpisz 0\n \nCo chcesz zrobi†?\n1-dodanie pracownika\n2-usuni©cie pracownika\n3-zmiana wasnego kodu";
+				cout << "Jeli chcesz wyj† z programu, wpisz 0\n \nCo chcesz zrobi†?\n1 - dodanie pracownika\n2 - usuni©cie pracownika\n3 - zmiana wasnego kodu";
 				int decyzja{};
 				cin >> decyzja;
 				
@@ -350,7 +347,7 @@ int main() {
 						}
 						else if (CzyKodPoprawny(starykod) == 7)
 						{
-							PlaySound(TEXT("rickroll.wav"), NULL, SND_ASYNC);
+							PlaySound(TEXT("rickroll.wav"), NULL, SND_ASYNC);//never gonna let u down, never gonna say goodbyeeeee
 							rickroll();
 							cout << "Nie moľesz usunĄ† siebie guptasie.";
 							this_thread::sleep_for(3s);
@@ -375,6 +372,7 @@ int main() {
 								else
 									break;
 							}
+							break;
 						}
 
 					}
@@ -410,7 +408,13 @@ int main() {
 								}
 								else
 								{
-									cout << "Kody si© r˘ľniĄ! Spr˘buj ponownie!";//CZY CHCESZ SPROBOWAC PPONOWNIE?
+									cout << "Podane kody nie pasujĄ, czy chcesz spr˘bowa† ponownie (t/n)? ";
+									char sproba{};
+									cin >> sproba;
+									if (CzyChceszKontynuowac(sproba))
+										continue;
+									else
+										break;
 								}
 							}
 						}
@@ -429,6 +433,7 @@ int main() {
 					break; }
 				default:
 					cout << "nieprawidowa warto†";
+					this_thread::sleep_for(2s);
 					break;
 				}
 			}
@@ -441,6 +446,6 @@ int main() {
 
 
 
-		system("cls");
+		system("cls"); //u u czyscimy u u 
 	}
 }
