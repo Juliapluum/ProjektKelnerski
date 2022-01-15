@@ -1,9 +1,8 @@
-﻿#include <iostream>
+#include <iostream>
 #include "naglowek.h"
 #include <string>
 #include <fstream>
 #include <thread>
-#include <sstream>
 #include <conio.h>
 
 using namespace std;
@@ -644,4 +643,3 @@ void drukowanie(int nrstolika, int platnosc)
 	}
 	stolik1.close();
 }
-
