@@ -13,7 +13,7 @@ int main() {
 	while (true)
 	{
 		int kod{};
-		cout << "Jeli chcesz wyj† z programu, wpisz 0\n \nPodaj sw˘j kod\n";
+		cout << "Jeli chcesz wyj z programu, wpisz 0\n \nPodaj sw¢j kod\n";
 		cout << "\n     /$$    /$$$$$$   /$$$$$$   \n   /$$$$   /$$__  $$ /$$__  $$  \n  |_  $$  |__/  \\ $$|__/  \\ $$  \n    | $$    /$$$$$$/   /$$$$$/  \n    | $$   /$$____/   |___  $$  \n    | $$  | $$       /$$  \\ $$  \n   /$$$$$$| $$$$$$$$|  $$$$$$/  \n  |______/|________/ \\______/   \n                                \n   /$$   /$$ /$$$$$$$   /$$$$$$ \n  | $$  | $$| $$____/  /$$__  $$\n  | $$  | $$| $$      | $$  \\__/\n  | $$$$$$$$| $$$$$$$ | $$$$$$$ \n  |_____  $$|_____  $$| $$__  $$\n        | $$ /$$  \\ $$| $$  \\ $$\n        | $$|  $$$$$$/|  $$$$$$/\n        |__/ \\______/  \\______/ \n                                \n   /$$$$$$$$ /$$$$$$   /$$$$$$  \n  |_____ $$//$$__  $$ /$$__  $$ \n       /$$/| $$  \\ $$| $$  \\ $$ \n      /$$/ |  $$$$$$/|  $$$$$$$ \n     /$$/   >$$__  $$ \\____  $$ \n    /$$/   | $$  \\ $$ /$$  \\ $$ \n   /$$/    |  $$$$$$/|  $$$$$$/ \n  |__/      \\______/  \\______/  ";
 		cout << endl;
 		cin >> kod;
@@ -25,7 +25,7 @@ int main() {
 			while (true)//UZYTKOWNIK
 				{
 					system("cls");
-					cout << "Jeli chcesz opuci† program, wpisz 0 \nCo chcesz zrobi†? \n1 - zmieni† sw˘j kod\n2 - zobaczy† zawarto† stolika\n3 - doda† pozycj© do stolika\n4 - sfinalizowa† rachunek";
+					cout << "Jeli chcesz opuci program, wpisz 0 \nCo chcesz zrobi? \n1 - zmieni sw¢j kod\n2 - zobaczy zawarto stolika\n3 - doda pozycj© do stolika\n4 - sfinalizowa rachunek";
 					int wybor{};
 					cin >> wybor;
 					switch (wybor)
@@ -38,7 +38,7 @@ int main() {
 						while (true)
 						{
 							system("cls");
-							cout << "Nie masz wystarczajĄcych uprawnieä! Podaj kod administratora lub wpisz 0 by wr˘ci†:"; //zmiana kodu za zgoda admina
+							cout << "Nie masz wystarczaj¥cych uprawnie䡠Podaj kod administratora lub wpisz 0 by wr¢ci:"; //zmiana kodu za zgoda admina
 							int corobisz{};
 							cin >> corobisz;
 							if (corobisz==0)
@@ -53,13 +53,13 @@ int main() {
 									cout << "Wprowad« nowy kod";
 									int nowykod{}, tymnowy{};
 									cin >> nowykod;
-									if (CzyKodPoprawny(nowykod) != 1)//czy kod do kogoś nie należy
+									if (CzyKodPoprawny(nowykod) != 1)//czy kod do kogo nie nale¿y
 									{
-										cout << "Przykro mi, ale musisz wybra† inny kod.";
+										cout << "Przykro mi, ale musisz wybra inny kod.";
 										this_thread::sleep_for(3s);
 										continue;
 									}
-									cout << "Potwierd« nowy kod";//czy kody są identyczne
+									cout << "Potwierd« nowy kod";//czy kody s¹ identyczne
 									cin >> tymnowy;
 									if (nowykod == tymnowy)
 									{
@@ -69,7 +69,7 @@ int main() {
 									}
 									else
 									{
-										cout << "Kody si© r˘ľniĄ!  Czy chcesz spr˘bowa† ponownie? (t/n)\n";//możliwość powtórzenia
+										cout << "Kody si© r¢¾ni¥!  Czy chcesz spr¢bowa ponownie? (t/n)\n";//mo¿liwo栰owt󲺥nia
 										char cokol{};
 										cin >> cokol;
 										if (CzyChceszKontynuowac(cokol))
@@ -83,7 +83,7 @@ int main() {
 							}
 							else
 							{
-								cout << "Kod niepoprawny. Mam nadziej©, ľe nie pr˘bujesz si© wama† :)";//jeśli nie podamy kody admina
+								cout << "Kod niepoprawny. Mam nadziej©, ¾e nie pr¢bujesz si© wama :)";//jeli nie podamy kody admina
 								this_thread::sleep_for(3s);
 								continue;
 							}
@@ -96,14 +96,14 @@ int main() {
 						{
 							system("cls");
 							stoliczkiwrestauracji();//wyswietlonko stolikow
-							cout << "Kt˘ry stolik chcesz otworzy†?";
+							cout << "Kt¢ry stolik chcesz otworzy?";
 							int wyborstolika{};
 							cin >> wyborstolika;
 							
 							if (wyborstolika > 0 && wyborstolika < 5)//tylko 4 stoliki wiec sprawdzam czy istnieje
 							{
 								wyswietlstolik(wyborstolika);
-								cout << "Wcinij dowolny znak, aby przej† dalej";
+								cout << "Wcinij dowolny znak, aby przej dalej";
 								char cokolwiek{};
 								cokolwiek = _getch();
 								break;
@@ -111,7 +111,7 @@ int main() {
 							}							
 							else
 							{
-								cout << "Nie ma takiego stolika. Czy chcesz spr˘bowa† jeszcze raz? (t/n)";
+								cout << "Nie ma takiego stolika. Czy chcesz spr¢bowa jeszcze raz? (t/n)";
 								char kontynuacja{};
 								cin >> kontynuacja;
 								if (CzyChceszKontynuowac(kontynuacja))
@@ -130,7 +130,7 @@ int main() {
 						{
 							system("cls");
 							stoliczkiwrestauracji();
-							cout << "Do kt˘rego stolika chcesz co doda†?";
+							cout << "Do kt¢rego stolika chcesz co doda?";
 							int numerstolika{};
 							cin >> numerstolika;
 							if (numerstolika>0&&numerstolika<5)//spr nr stolika
@@ -140,7 +140,7 @@ int main() {
 
 
 									system("cls");
-									cout << "Co chcesz doda† do stolika?\n1 - potraw© \n2 - wino";
+									cout << "Co chcesz doda do stolika?\n1 - potraw© \n2 - wino";
 									int wybdodania{};
 									cin >> wybdodania;
 									switch (wybdodania)
@@ -149,10 +149,10 @@ int main() {
 									{
 										system("cls");
 										wyswietlpotrawy();
-										cout << endl << "Podaj numer dania, kt˘re chcesz doda†.";
+										cout << endl << "Podaj numer dania, kt¢re chcesz doda.";
 										int danie{};
 										cin >> danie;
-										if (danie>0&&danie<20)// spr nr dania (dlatego też ostatecznie zrezygnowałam z funkcji dodawania dań, gdyż zawsze mamy 19 dań inaczej musialabym to sprawdzać z plikiem za każdym razem przy używaniu teog 
+										if (danie>0&&danie<20)// spr nr dania (dlatego te¿ ostatecznie zrezygnowa³am z funkcji dodawania da񬠧dy¿ zawsze mamy 19 da񠩮aczej musialabym to sprawdza栺 plikiem za ka¿dym razem przy u¿ywaniu teog 
 										{ 
 											potrawacenawino(numerstolika, danie);
 										cout << "Danie zostao pomylnie dodane.";
@@ -161,7 +161,7 @@ int main() {
 										}
 										else
 										{
-											cout << "Podane danie nie istnieje. Czy chcesz spr˘bowa† ponownie?";
+											cout << "Podane danie nie istnieje. Czy chcesz spr¢bowa ponownie?";
 											char danko{};
 											cin >> danko;
 											if (CzyChceszKontynuowac(danko))
@@ -174,7 +174,7 @@ int main() {
 									{
 										system("cls");
 										wyswietlwina();
-										cout << endl << "Podaj numer wina, kt˘re chcesz doda†.";
+										cout << endl << "Podaj numer wina, kt¢re chcesz doda.";
 										int wino{},glassbottle;
 										cin >> wino;
 										cout << endl << "Kieliszek(1) czy butelka(2)?";
@@ -188,7 +188,7 @@ int main() {
 										}
 										else
 										{
-											cout << "Podane wino bĄd« wybrana warto† przy wybieraniu pojemnoci nie istnieje. Czy chcesz spr˘bowa† ponownie?(t/n)";
+											cout << "Podane wino b¥d« wybrana warto przy wybieraniu pojemnoci nie istnieje. Czy chcesz spr¢bowa ponownie?(t/n)";
 											char danko{};
 											cin >> danko;
 											if (CzyChceszKontynuowac(danko))
@@ -209,7 +209,7 @@ int main() {
 							}
 							else
 							{
-								cout << "Niestety taki stolik nie istnieje. Czy chcesz spr˘bowa† ponownie? (t/n)\n"; // a tu co jakby stolik nie istniał
+								cout << "Niestety taki stolik nie istnieje. Czy chcesz spr¢bowa ponownie? (t/n)\n"; // a tu co jakby stolik nie istnia³
 								char stolczor{};
 								cin >> stolczor;
 								if (CzyChceszKontynuowac(stolczor))
@@ -227,21 +227,21 @@ int main() {
 						{
 							system("cls");
 							stoliczkiwrestauracji();
-							cout << "Kt˘ry stolik pragniesz zamknĄ†?";
+							cout << "Kt¢ry stolik pragniesz zamkn¥?";
 							int nrstolika;
 							cin >> nrstolika;
 							if (nrstolika > 0 && nrstolika < 5)
 							{
 								while (true)
 								{
-									cout << "Jaki b©dzie spos˘b patnoci ? Got˘wkĄ(1) czy kartĄ(2) ? ";
+									cout << "Jaki b©dzie spos¢b patnoci ? Got¢wk¥(1) czy kart¥(2) ? ";
 									int platnosc{};
 									cin >> platnosc;
 									if (platnosc == 1 || platnosc == 2)
 									{
 										system("cls");
 										drukowanie(nrstolika, platnosc);
-										cout << "\n\nAby zamknĄ† wcinij dowolny przycisk.";
+										cout << "\n\nAby zamkn¥ wcinij dowolny przycisk.";
 										char cokolwiek;
 										cokolwiek = _getch();
 										exit(0);
@@ -249,7 +249,7 @@ int main() {
 									}
 									else
 									{
-										cout << "Nie ma takiej metody patnoci, spr˘buj ponownie.";
+										cout << "Nie ma takiej metody patnoci, spr¢buj ponownie.";
 										this_thread::sleep_for(3s);
 										continue;
 									}
@@ -258,7 +258,7 @@ int main() {
 							}
 							else
 							{
-								cout << "Podany stolik nie istnieje! Czy chcesz spr˘bowa† ponownie? (t/n)";
+								cout << "Podany stolik nie istnieje! Czy chcesz spr¢bowa ponownie? (t/n)";
 								char zamk{};
 								cin >> zamk;
 								if (CzyChceszKontynuowac(zamk))
@@ -272,7 +272,7 @@ int main() {
 					default:
 					{
 						system("cls");
-						cout << "Za liczba, prosz© spr˘bowa† ponownie";
+						cout << "Za liczba, prosz© spr¢bowa ponownie";
 						this_thread::sleep_for(2s);
 						break;
 					}
@@ -287,7 +287,7 @@ int main() {
 			while (true)//ADMIN
 			{
 				system("cls");
-				cout << "Jeli chcesz wyj† z programu, wpisz 0\n \nCo chcesz zrobi†?\n1 - dodanie pracownika\n2 - usuni©cie pracownika\n3 - zmiana wasnego kodu";
+				cout << "Jeli chcesz wyj z programu, wpisz 0\n \nCo chcesz zrobi?\n1 - dodanie pracownika\n2 - usuni©cie pracownika\n3 - zmiana wasnego kodu";
 				int decyzja{};
 				cin >> decyzja;
 				
@@ -305,7 +305,7 @@ int main() {
 						cin >> nowykod;
 						if (CzyKodPoprawny(nowykod) != 1)
 						{
-							cout << "Przykro mi, ale musisz wybra† inny kod.";
+							cout << "Przykro mi, ale musisz wybra inny kod.";
 							this_thread::sleep_for(3s);
 							continue;
 						}
@@ -313,7 +313,7 @@ int main() {
 						cin >> tymnowy;
 						if (nowykod != tymnowy)
 						{
-							cout << "Podane kody nie sĄ identyczne! Czy chcesz spr˘bowa† ponownie? (t/n)";
+							cout << "Podane kody nie s¥ identyczne! Czy chcesz spr¢bowa ponownie? (t/n)";
 							char proba{};
 							cin >> proba;
 							if (CzyChceszKontynuowac(proba))
@@ -332,12 +332,12 @@ int main() {
 					while (true)
 					{
 						system("cls");
-						cout << "Podaj kod pracownika, kt˘rego chcesz usunĄ†.";
+						cout << "Podaj kod pracownika, kt¢rego chcesz usun¥.";
 						int starykod{};
 						cin >> starykod;
 						if (CzyKodPoprawny(starykod) == 1)
 						{
-							cout << "Podany kod nie istnieje, czy chcesz spr˘bowa† ponownie (t/n)? ";
+							cout << "Podany kod nie istnieje, czy chcesz spr¢bowa ponownie (t/n)? ";
 							char kontynuacja{};
 							cin >> kontynuacja;
 							if (CzyChceszKontynuowac(kontynuacja))
@@ -349,7 +349,7 @@ int main() {
 						{
 							PlaySound(TEXT("rickroll.wav"), NULL, SND_ASYNC);//never gonna let u down, never gonna say goodbyeeeee
 							rickroll();
-							cout << "Nie moľesz usunĄ† siebie guptasie.";
+							cout << "Nie mo¾esz usun¥ siebie guptasie.";
 							this_thread::sleep_for(3s);
 							continue;
 						}
@@ -364,7 +364,7 @@ int main() {
 							}
 							else
 							{
-								cout << "Podane kody nie pasujĄ, czy chcesz spr˘bowa† ponownie (t/n)? ";
+								cout << "Podane kody nie pasuj¥, czy chcesz spr¢bowa ponownie (t/n)? ";
 								char proba{};
 								cin >> proba;
 								if (CzyChceszKontynuowac(proba))
@@ -381,7 +381,7 @@ int main() {
 					while (true)
 					{
 						system("cls");
-						cout << "Potwierd« sw˘j kod";
+						cout << "Potwierd« sw¢j kod";
 						int nowykod{};
 						cin >> nowykod;
 						if (nowykod==kod)
@@ -394,7 +394,7 @@ int main() {
 								cin >> nowykod;
 								if (CzyKodPoprawny(nowykod)!=1)
 								{
-									cout << "Przykro mi, ale musisz wybra† inny kod.";
+									cout << "Przykro mi, ale musisz wybra inny kod.";
 									this_thread::sleep_for(3s);
 									continue;
 								}
@@ -408,7 +408,7 @@ int main() {
 								}
 								else
 								{
-									cout << "Podane kody nie pasujĄ, czy chcesz spr˘bowa† ponownie (t/n)? ";
+									cout << "Podane kody nie pasuj¥, czy chcesz spr¢bowa ponownie (t/n)? ";
 									char sproba{};
 									cin >> sproba;
 									if (CzyChceszKontynuowac(sproba))
@@ -420,7 +420,7 @@ int main() {
 						}
 						else
 						{
-							cout << "Nieprawidowy kod!\nCzy chcesz ponowi† pr˘b©? (t/n)";
+							cout << "Nieprawidowy kod!\nCzy chcesz ponowi pr¢b©? (t/n)";
 							char kontynuacja{};
 							cin >> kontynuacja;
 							if (CzyChceszKontynuowac(kontynuacja))
@@ -432,7 +432,7 @@ int main() {
 					}
 					break; }
 				default:
-					cout << "nieprawidowa warto†";
+					cout << "nieprawidowa warto";
 					this_thread::sleep_for(2s);
 					break;
 				}
@@ -440,7 +440,7 @@ int main() {
 		}
 		else if (CzyKodPoprawny(kod) == 1)
 		{
-			cout << "KOD NIEPOPRAWNY, SPRŕBUJ PONOWNIE ZA 5 SEKUND";
+			cout << "KOD NIEPOPRAWNY, SPRJ PONOWNIE ZA 5 SEKUND";
 			this_thread::sleep_for(5s);
 		}
 
