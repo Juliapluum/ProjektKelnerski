@@ -7,6 +7,7 @@
 
 using namespace std;
 
+
 bool CzyChceszKontynuowac(char kontynuacja)
 {
 	if (kontynuacja == 'n' || kontynuacja == 'N')
@@ -17,13 +18,13 @@ bool CzyChceszKontynuowac(char kontynuacja)
 	{
 		if (kontynuacja != 't' && kontynuacja != 'T')
 		{
-			cout << "Niestety nie rozumiem znaku, kt˘ry zosta wprowadzony. Domylam si© jednak, ľe chodzio o kontynuacj©.";//ponowną próbę
+			cout << "Niestety nie rozumiem znaku, który został wprowadzony. Domyślam się jednak, że chodziło o kontynuację.";
 			this_thread::sleep_for(3s);
 			return 1;
 		}
 		return 1;
 	}
-	
+
 }
 
 int CzyKodPoprawny(int kod)
@@ -32,7 +33,7 @@ int CzyKodPoprawny(int kod)
 	kodzik.open("kody.txt", ios::in);
 	if (kodzik.good() == false)
 	{
-		cout << "Niestety kto usunĄ niezb©dny do dziaania systemu plik! Prosz© skontaktowa† si© z pomocĄ.";
+		cout << "Niestety ktoś usunął niezbędny do działania systemu plik! Proszę skontaktować się z pomocą.";
 		this_thread::sleep_for(10s);
 		exit(0);
 	}
@@ -63,7 +64,7 @@ int CzyKodPoprawny(int kod)
 	return 1;
 }
 
-void DodaniePracownika(int nowykod) 
+void DodaniePracownika(int nowykod)
 {
 	fstream kodzik;
 	kodzik.open("kody.txt", ios::out | ios::app);
@@ -104,7 +105,7 @@ void UsunieciePracownika(int starykod)
 	}
 	kodzik.close();
 	kodzik.open("kody.txt", ios::out);
-	for (int i = 0; i < n-1; i++)
+	for (int i = 0; i < n - 1; i++)
 	{
 		if (i < n - 2)
 			kodzik << *(tablica + i) << endl;
@@ -143,7 +144,7 @@ void ZmianaKodu(int kod, int nowykod)
 		}
 		else
 		{
-			*(tablica +( numerlinii-1)) = linia;
+			*(tablica + (numerlinii - 1)) = linia;
 			numerlinii++;
 		}
 	}
@@ -308,41 +309,41 @@ void stoliczkiwrestauracji()
 	int stolik = 1;
 	for (int k = 0; k < 2; k++)
 	{
-	for (int i = 0; i < 2; i++)
-	{
-		cout << prawygorny;
-		for (int j = 0; j < 20; j++)
+		for (int i = 0; i < 2; i++)
 		{
-			cout << poziome;
-		}
-		cout << lewygorny << "          ";
-	}
-	cout << endl;
-	for (int i = 0; i < 5; i++)
-	{
-		for (int j = 0; j < 2; j++)
-		{
-			if (i == 2)
+			cout << prawygorny;
+			for (int j = 0; j < 20; j++)
 			{
-				cout << pionowe << "         " << stolik << "          " << pionowe << "          ";
-				stolik++;
-				continue;
+				cout << poziome;
 			}
-			cout << pionowe << "                    " << pionowe << "          ";
+			cout << lewygorny << "          ";
 		}
 		cout << endl;
-	}
-	for (int i = 0; i < 2; i++)
-	{
-		cout << prawydolny;
-		for (int j = 0; j < 20; j++)
+		for (int i = 0; i < 5; i++)
 		{
-			cout << poziome;
+			for (int j = 0; j < 2; j++)
+			{
+				if (i == 2)
+				{
+					cout << pionowe << "         " << stolik << "          " << pionowe << "          ";
+					stolik++;
+					continue;
+				}
+				cout << pionowe << "                    " << pionowe << "          ";
+			}
+			cout << endl;
 		}
-		cout << lewydolny << "          ";
+		for (int i = 0; i < 2; i++)
+		{
+			cout << prawydolny;
+			for (int j = 0; j < 20; j++)
+			{
+				cout << poziome;
+			}
+			cout << lewydolny << "          ";
+		}
+		cout << endl << endl << endl << endl;
 	}
-	cout << endl << endl << endl << endl;
-}
 }
 
 void wyswietlstolik(int nrstolika)
@@ -378,14 +379,14 @@ void wyswietlstolik(int nrstolika)
 	while (!rest.eof())
 	{
 		getline(rest, linia);
-		if (nrlinii%2==1)
+		if (nrlinii % 2 == 1)
 			cout << linia << endl;
 		nrlinii++;
 	}
 	rest.close();
 }
 
-void wyswietlpotrawy ()
+void wyswietlpotrawy()
 {
 	fstream rest;
 	rest.open("potrawy.txt", ios::in);
@@ -409,7 +410,7 @@ void wyswietlpotrawy ()
 		}
 		case 0:
 		{
-			cout << linia << "z" << endl << endl;
+			cout << linia << "zł" << endl << endl;
 			break;
 		}
 		default:
@@ -430,7 +431,7 @@ void wyswietlwina()
 	while (!rest.eof())
 	{
 		getline(rest, linia);
-		switch (nrlinii%3)
+		switch (nrlinii % 3)
 		{
 		case 1:
 		{
@@ -440,12 +441,12 @@ void wyswietlwina()
 		}
 		case 2:
 		{
-			cout << "Kieliszek: " << linia << "z" << endl;
+			cout << "Kieliszek: " << linia << "zł" << endl;
 			break;
 		}
 		case 0:
 		{
-			cout <<"Butelka: " << linia << "z" << endl << endl;
+			cout << "Butelka: " << linia << "zł" << endl << endl;
 			break;
 		}
 		default:
@@ -465,46 +466,46 @@ void potrawacenawino(int nrstolika, int nrpotrawy)
 	while (!rest.eof())
 	{
 		getline(rest, linia);
-			if (ktoralinia == ((nrpotrawy*3)-2))
+		if (ktoralinia == ((nrpotrawy * 3) - 2))
+		{
+			fstream stolik;
+			switch (nrstolika)
 			{
-				fstream stolik;
-				switch (nrstolika)
-				{
-				case 1:
-				{
-					stolik.open("stolik1.txt", ios::out | ios::app);
-					break;
-				}
-				case 2:
-				{
-					stolik.open("stolik2.txt", ios::out | ios::app);
-					break;
-				}
-				case 3:
-				{
-					stolik.open("stolik3.txt", ios::out | ios::app);
-					break;
-				}
-				case 4:
-				{
-					stolik.open("stolik4.txt", ios::out | ios::app);
-					break;
-				}
-				
-				default:
-					break;
-				}
-				stolik<< linia << endl;
-				getline(rest, linia);
-				cout << "Wino, kt˘re moľesz zaproponowa†: ";
-				cout << linia << endl;
-				getline(rest, linia);
-				stolik << linia << endl;
-				rest.close();
+			case 1:
+			{
+				stolik.open("stolik1.txt", ios::out | ios::app);
 				break;
-				
 			}
-		
+			case 2:
+			{
+				stolik.open("stolik2.txt", ios::out | ios::app);
+				break;
+			}
+			case 3:
+			{
+				stolik.open("stolik3.txt", ios::out | ios::app);
+				break;
+			}
+			case 4:
+			{
+				stolik.open("stolik4.txt", ios::out | ios::app);
+				break;
+			}
+
+			default:
+				break;
+			}
+			stolik << linia << endl;
+			getline(rest, linia);
+			cout << "Wino, które możesz zaproponować: ";
+			cout << linia << endl;
+			getline(rest, linia);
+			stolik << linia << endl;
+			rest.close();
+			break;
+
+		}
+
 		ktoralinia++;
 	}
 }
@@ -605,16 +606,16 @@ void drukowanie(int nrstolika, int platnosc)
 		}
 		else
 		{
-			cout << " " << linia << "z" << endl;
+			cout << " " << linia << "zł" << endl;
 			suma += atoi(linia.c_str());
 		}
 	}
 	string rodzaj{};
 	if (platnosc == 1)
-		rodzaj = "got˘wkĄ";
+		rodzaj = "gotówką";
 	else
-		rodzaj = "kartĄ";
-	cout << "Suma: " << suma << "z" << endl << "Wybrano patno† " << rodzaj;
+		rodzaj = "kartą";
+	cout << "Suma: " << suma << "zł" << endl << "Wybrano płatność " << rodzaj;
 	char czekanie{};
 	stolik.close();
 	fstream stolik1{};
