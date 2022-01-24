@@ -8,6 +8,7 @@
 using namespace std;
 
 
+
 bool CzyChceszKontynuowac(char kontynuacja)
 {
 	if (kontynuacja == 'n' || kontynuacja == 'N')
@@ -18,7 +19,7 @@ bool CzyChceszKontynuowac(char kontynuacja)
 	{
 		if (kontynuacja != 't' && kontynuacja != 'T')
 		{
-			cout << "Niestety nie rozumiem znaku, który został wprowadzony. Domyślam się jednak, że chodziło o kontynuację.";
+			cout << "Niestety nie rozumiem znaku, kt˘ry zosta wprowadzony. Domylam si© jednak, ľe chodzio o kontynuacj©.";
 			this_thread::sleep_for(3s);
 			return 1;
 		}
@@ -33,7 +34,7 @@ int CzyKodPoprawny(int kod)
 	kodzik.open("kody.txt", ios::in);
 	if (kodzik.good() == false)
 	{
-		cout << "Niestety ktoś usunął niezbędny do działania systemu plik! Proszę skontaktować się z pomocą.";
+		cout << "Niestety kto usunĄ niezb©dny do dziaania systemu plik! Prosz© skontaktowa† si© z pomocĄ.";
 		this_thread::sleep_for(10s);
 		exit(0);
 	}
@@ -410,7 +411,7 @@ void wyswietlpotrawy()
 		}
 		case 0:
 		{
-			cout << linia << "zł" << endl << endl;
+			cout << linia << "z" << endl << endl;
 			break;
 		}
 		default:
@@ -441,12 +442,12 @@ void wyswietlwina()
 		}
 		case 2:
 		{
-			cout << "Kieliszek: " << linia << "zł" << endl;
+			cout << "Kieliszek: " << linia << "z" << endl;
 			break;
 		}
 		case 0:
 		{
-			cout << "Butelka: " << linia << "zł" << endl << endl;
+			cout << "Butelka: " << linia << "z" << endl << endl;
 			break;
 		}
 		default:
@@ -497,7 +498,7 @@ void potrawacenawino(int nrstolika, int nrpotrawy)
 			}
 			stolik << linia << endl;
 			getline(rest, linia);
-			cout << "Wino, które możesz zaproponować: ";
+			cout << "Wino, kt˘re moľesz zaproponowa†: ";
 			cout << linia << endl;
 			getline(rest, linia);
 			stolik << linia << endl;
@@ -606,16 +607,16 @@ void drukowanie(int nrstolika, int platnosc)
 		}
 		else
 		{
-			cout << " " << linia << "zł" << endl;
+			cout << " " << linia << "z" << endl;
 			suma += atoi(linia.c_str());
 		}
 	}
 	string rodzaj{};
 	if (platnosc == 1)
-		rodzaj = "gotówką";
+		rodzaj = "got˘wkĄ";
 	else
-		rodzaj = "kartą";
-	cout << "Suma: " << suma << "zł" << endl << "Wybrano płatność " << rodzaj;
+		rodzaj = "kartĄ";
+	cout << "Suma: " << suma << "z" << endl << "Wybrano patno† " << rodzaj;
 	char czekanie{};
 	stolik.close();
 	fstream stolik1{};
