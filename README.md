@@ -1,5 +1,5 @@
-      Prosty Projekt kelnerski mający na celu ułatwienie pracy kelnera.
-    Logowanie za pomocą kodu
+Prosty Projekt kelnerski mający na celu ułatwienie pracy kelnera.
+Logowanie za pomocą kodu
   Na pozycję admina
 dodawanie pracownika
 usuwanie pracownika
